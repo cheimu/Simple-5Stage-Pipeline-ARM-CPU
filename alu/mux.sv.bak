@@ -1,0 +1,22 @@
+`timescale 1ns/10ps
+
+module mux2_1(out, i0, i1, sel);
+	output logic out;
+	input  logic i0, i1; 
+	input logic sel;
+	logic nsel;
+	logic a1o, a2o;
+	not #50 n1 (nsel, sel);
+	
+	genvar i;
+	
+	generate 
+		for (i=0; i < 64; i++) begin : eachDff
+			// assign out[i] = ~sel & i0[i] | sel & i1[i];
+		   and #50 a1 (a1o[i], nsel, i0[i]);
+			and #50 a2 (a2o[i], sel, i1[i]);
+			or #50 o1 (out[i], a1o[i], a2o[i]);
+		end
+	endgenerate
+			
+endmodule

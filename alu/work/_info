@@ -1,0 +1,401 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/yongqw2/Desktop/Lab2
+vadd_sub
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1508867718
+!i10b 1
+!s100 5kiSoEVK?KJJQ8bm43j863
+Ie7bEX5fe2^UK>DJ71:gB82
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 add_sub_sv_unit
+S1
+R0
+w1508104590
+8./add_sub.sv
+F./add_sub.sv
+L0 3
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1508867718.000000
+!s107 ./add_sub.sv|
+!s90 -reportprogress|300|./add_sub.sv|
+!i113 1
+Z6 tCvgOpt 0
+vadder
+R1
+R2
+!i10b 1
+!s100 3Ki8jz3V>01RT7[l7=AM@2
+IYl7G07b9nn9nOAKQdSl^z2
+R3
+Z7 !s105 adder_sv_unit
+S1
+R0
+Z8 w1508106252
+Z9 8./adder.sv
+Z10 F./adder.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+Z11 !s107 ./adder.sv|
+Z12 !s90 -reportprogress|300|./adder.sv|
+!i113 1
+R6
+vadder_testbench
+R1
+R2
+!i10b 1
+!s100 6VcGfd?gmb0<eT0c6:Om?0
+I;aGeoe8<SFVUHFEAISV162
+R3
+R7
+S1
+R0
+R8
+R9
+R10
+L0 20
+R4
+r1
+!s85 0
+31
+R5
+R11
+R12
+!i113 1
+R6
+valu
+R1
+R2
+!i10b 1
+!s100 3[SVo4>hFFj9ogIbhF_z50
+I=<d6c=gK^2Kf`<Tf<bNDj3
+R3
+Z13 !s105 alu_sv_unit
+S1
+R0
+Z14 w1508867707
+Z15 8./alu.sv
+Z16 F./alu.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+Z17 !s107 ./alu.sv|
+Z18 !s90 -reportprogress|300|./alu.sv|
+!i113 1
+R6
+valu1b_testbench
+R1
+!s110 1508104495
+!i10b 1
+!s100 eFOJal=XPoFjHdjn>`FjL3
+IXef1[dYbmXk;JPRmXZZ[R3
+R3
+Z19 !s105 alu_1b_sv_unit
+S1
+R0
+w1508104491
+Z20 8./alu_1b.sv
+Z21 F./alu_1b.sv
+Z22 L0 19
+R4
+r1
+!s85 0
+31
+!s108 1508104495.000000
+Z23 !s107 ./alu_1b.sv|
+Z24 !s90 -reportprogress|300|./alu_1b.sv|
+!i113 1
+R6
+valu_1b
+R1
+R2
+!i10b 1
+!s100 CFINKzdYGIR=@mL;3=?J`3
+IX_M3ACXkf]mCVPR>k^EX71
+R3
+R19
+S1
+R0
+Z25 w1508108142
+R20
+R21
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R23
+R24
+!i113 1
+R6
+valu_1b_testbench
+R1
+R2
+!i10b 1
+!s100 3C2K`<zhaz68iZIL3zzf?0
+IP]<cgRmd75j7B`N;=1^;41
+R3
+R19
+S1
+R0
+R25
+R20
+R21
+L0 22
+R4
+r1
+!s85 0
+31
+R5
+R23
+R24
+!i113 1
+R6
+valu_b1_testbench
+R1
+!s110 1508104479
+!i10b 1
+!s100 ON<900=gKM<lA2iDBY1=l3
+InBi0GPXAH>EnlDh4JNJSS3
+R3
+R19
+S1
+R0
+w1508104232
+R20
+R21
+R22
+R4
+r1
+!s85 0
+31
+!s108 1508104479.000000
+R23
+R24
+!i113 1
+R6
+valustim
+R1
+R2
+!i10b 1
+!s100 PbQ@kFS:0?VW_=3lX>Pj10
+IZ8LRVOk?mmdI]ij@UN^EH0
+R3
+R13
+S1
+R0
+R14
+R15
+R16
+L0 49
+R4
+r1
+!s85 0
+31
+R5
+R17
+R18
+!i113 1
+R6
+vmux2_1
+R1
+R2
+!i10b 1
+!s100 HV;:>>]gj[o]]gF_?R9dC2
+ISf8d48CZ3QkWB9OkTC4iE2
+R3
+Z26 !s105 mux_sv_unit
+S1
+R0
+Z27 w1508107358
+Z28 8./mux.sv
+Z29 F./mux.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+Z30 !s107 ./mux.sv|
+Z31 !s90 -reportprogress|300|./mux.sv|
+!i113 1
+R6
+vmux2_1_testbench
+R1
+R2
+!i10b 1
+!s100 UDIKdR5h:IfJ?gE_:JOkP1
+I;HCgQ6a`O<[[=dE;[fzOb2
+R3
+R26
+S1
+R0
+R27
+R28
+R29
+L0 18
+R4
+r1
+!s85 0
+31
+R5
+R30
+R31
+!i113 1
+R6
+vmux4_1
+R1
+Z32 !s110 1508867717
+!i10b 1
+!s100 6>_K>D<ljLLK8=b95BYO63
+IlURSP2<SL7oBLNWE_c`gk2
+R3
+Z33 !s105 mux4_1_sv_unit
+S1
+R0
+Z34 w1508107764
+Z35 8./mux4_1.sv
+Z36 F./mux4_1.sv
+L0 3
+R4
+r1
+!s85 0
+31
+Z37 !s108 1508867717.000000
+Z38 !s107 ./mux4_1.sv|
+Z39 !s90 -reportprogress|300|./mux4_1.sv|
+!i113 1
+R6
+vmux4_1_testbench
+R1
+R32
+!i10b 1
+!s100 >AI[;Y0i@fOh94c9>XK5a3
+Io25mJU<SU`fIXCHImgX`o2
+R3
+R33
+S1
+R0
+R34
+R35
+R36
+L0 14
+R4
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 1
+R6
+vmux8_1
+R1
+R32
+!i10b 1
+!s100 <CY75P9WVI;LL=jU4dahR0
+IRfBm4neJ`YI2QV3BOfAVm0
+R3
+Z40 !s105 mux8_1_sv_unit
+S1
+R0
+Z41 w1508107856
+Z42 8./mux8_1.sv
+Z43 F./mux8_1.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R37
+Z44 !s107 ./mux8_1.sv|
+Z45 !s90 -reportprogress|300|./mux8_1.sv|
+!i113 1
+R6
+vmux_testbench
+R1
+R32
+!i10b 1
+!s100 W2NLUN^L0gWRUNkRD65dZ3
+I:Uh9f<NEfRbSXUTMQbTo23
+R3
+R40
+S1
+R0
+R41
+R42
+R43
+L0 16
+R4
+r1
+!s85 0
+31
+R37
+R44
+R45
+!i113 1
+R6
+vzeroflag
+R1
+R2
+!i10b 1
+!s100 l3nCH:n3VIiZK^>N6?]ze2
+I3VMeHk9R<:[?<znU;8Nic0
+R3
+Z46 !s105 zeroflag_sv_unit
+S1
+R0
+Z47 w1508357896
+Z48 8./zeroflag.sv
+Z49 F./zeroflag.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+Z50 !s107 ./zeroflag.sv|
+Z51 !s90 -reportprogress|300|./zeroflag.sv|
+!i113 1
+R6
+vzeroflag_testbench
+R1
+R2
+!i10b 1
+!s100 D0?1WPY=1U=HUQ5kSnKIM3
+IIfNC6^zXg65l8akjAKN901
+R3
+R46
+S1
+R0
+R47
+R48
+R49
+L0 43
+R4
+r1
+!s85 0
+31
+R5
+R50
+R51
+!i113 1
+R6

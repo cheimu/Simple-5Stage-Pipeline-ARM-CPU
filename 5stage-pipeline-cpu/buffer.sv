@@ -1,0 +1,289 @@
+`timescale 1ns/10ps // time scale
+
+// 4-bit buffer
+module buf4 (dataIn, dataOut, clk);
+	output logic [3:0] dataOut;
+	input logic [3:0] dataIn;
+	input logic clk;
+		
+	genvar i;
+	
+	generate
+		for (i=0; i<4; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule
+
+
+
+module buf6 (in, out, clk);
+	input logic [5:0] in;
+	output logic [5:0] out;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<6; i++) begin : eachDff
+			D_FF dff (out[i], in[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+
+module buf6_2(in, out, clk);
+    input logic [5:0] in;
+	output logic [5:0] out;
+	input logic clk;
+	logic [5:0] ini;
+	
+	buf6 b0 (in, ini, clk);
+	buf6 b1(ini, out, clk);
+	
+endmodule
+
+module buf4_3 (dataIn, dataOut, clk);
+	output logic [3:0] dataOut;
+	input logic [3:0] dataIn;
+	input logic clk;
+	logic [3:0] data1, data2;
+	
+	buf4 b0 (dataIn, data1, clk);
+	buf4 b1 (data1, data2, clk);
+	buf4 b3 (data2, dataOut, clk);
+	
+endmodule
+
+
+// 5-bit buffer
+module buf5 (dataIn, dataOut,  rst, clk);
+	output logic [4:0] dataOut;
+	input logic [4:0] dataIn;
+	input logic clk, rst;
+		
+	genvar i;
+	
+	generate
+		for (i=0; i<5; i++) begin : eachDff
+			D_FFi dff (dataOut[i], dataIn[i] , rst, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+module D_FFi (q, d, reset, clk);
+	output reg q;
+	input d, reset, clk;
+	
+	always_ff @(posedge clk)
+	if (reset)
+		q <= 1; // On reset, set to 0
+	else
+		q <= d; // Otherwise out = d
+endmodule 
+
+module buf5_2 (datain, dataout, rst,  clk);
+	output logic [4:0] dataout;
+	input logic [4:0] datain;
+	input logic clk, rst;
+	logic [4:0] data1, data2;
+	
+	buf5 b0 (datain, data1, rst,clk);
+	buf5 b1 (data1, data2, rst,clk);
+	buf5 b3 (data2, dataout, rst, clk);
+	
+endmodule 
+
+// 9-bit buffer
+module buf9 (dataIn, dataOut, clk);
+	output logic [8:0] dataOut;
+	input logic [8:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<9; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+// 12-bit buffer
+module buf12 (dataIn, dataOut, clk);
+	output logic [11:0] dataOut;
+	input logic [11:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<12; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+// 16-bit buffer
+module buf16 (dataIn, dataOut, clk);
+	output logic [15:0] dataOut;
+	input logic [15:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<16; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule
+
+// 19-bit buffer
+module buf19 (dataIn, dataOut, clk);
+	output logic [18:0] dataOut;
+	input logic [18:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<19; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule
+
+module buf32(dataout, datain, rst, clk);
+	output logic [31:0] dataout;
+	input logic [31:0] datain;
+	input logic rst, clk;
+	
+	genvar i;
+	generate
+		for (i = 0; i < 32; i++) begin : eachdff
+			D_FF dff (dataout[i], datain[i], rst, clk);
+		end
+	endgenerate
+endmodule 
+
+// 64-bit buffer
+module buf64 (dataIn, dataOut, clk);
+	output logic [63:0] dataOut;
+	input logic [63:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<64; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+module buf26 (dataIn, dataOut, clk);
+	output logic [25:0] dataOut;
+	input logic [25:0] dataIn;
+	input logic clk;
+	
+	genvar i;
+	
+	generate
+		for (i=0; i<26; i++) begin : eachDff
+			D_FF dff (dataOut[i], dataIn[i] , 1'b0, clk);
+		end
+	endgenerate
+	
+endmodule 
+
+module double (out, in, clk);
+	input logic in;
+	input logic clk;
+	output logic out;
+	logic ini;
+	
+	D_FF d1 (ini, in, 1'b0, clk);
+	D_FF d11 (out, ini, 1'b0, clk);
+
+endmodule
+
+module doubleWr (out, in, rst, clk);
+	input logic rst, in;
+	input logic clk;
+	output logic out;
+	logic ini;
+	
+	D_FF d1 (ini, in, rst, clk);
+	D_FF d11 (out, ini, rst, clk);
+
+endmodule
+
+module triple (out, in, clk);
+	input logic in;
+	input logic clk;
+	output logic out;
+	logic ini, inii;
+	
+	D_FF d1 (ini, in, 1'b0, clk);
+	D_FF d11 (inii, ini, 1'b0, clk);
+	D_FF d111 (out, inii, 1'b0, clk);
+
+endmodule
+
+module triplewr (out, in, rst ,clk);
+	input logic in, rst;
+	input logic clk;
+	output logic out;
+	logic ini, inii;
+	
+	D_FF d1 (ini, in, rst, clk);
+	D_FF d11 (inii, ini, rst, clk);
+	D_FF d111 (out, inii, rst, clk);
+
+endmodule
+
+module sigeyi (out, in, rst,clk);
+	input logic in, rst;
+	input logic clk;
+	output logic [3:0] out;
+	
+	D_FF d1 (out[0], in, rst, clk);
+	D_FF d11 (out[1], out[0], rst, clk);
+	D_FF d111 (out[2], out[1], rst, clk);
+	D_FF d1111 (out[3], out[2], rst, clk);
+
+endmodule
+
+module buffer2_2 (out, in, rst, clk);
+	input logic [1:0] in;
+	input logic rst, clk;
+	output logic [1:0] out;
+	D_FF d1 (out[0], in[0], rst, clk);
+	D_FF d2 (out[1], in[1], rst, clk);
+
+	
+endmodule
+
+module bobo (out, in, clk);
+	output logic [2:0] out;
+	input  logic clk;
+	input logic [2:0] in;
+	
+	genvar i;
+	
+	generate
+		for (i = 0; i < 3; i++)begin : eachtritri
+			double tr (out[i], in[i], clk);
+		end
+	endgenerate
+endmodule
+	

@@ -1,0 +1,29 @@
+module se19_64 (out, in);
+	input logic [18:0] in;
+	output logic [63:0] out;
+	
+	
+	genvar i;
+	generate
+		for (i = 19; i < 64; i++) begin : eachAssign
+			assign out[i] = in[18];
+		end
+	endgenerate
+	
+	assign out[18:0] = in;
+endmodule 
+
+module se26_64 (out, in);
+	input logic [25:0] in;
+	output logic [63:0] out;
+	
+	
+	genvar i;
+	generate
+		for (i = 26; i < 64; i++) begin : eachAssign
+			assign out[i] = in[25];
+		end
+	endgenerate
+	
+	assign out[25:0] = in;
+endmodule 

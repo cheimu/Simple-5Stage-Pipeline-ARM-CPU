@@ -1,0 +1,12 @@
+module dec1_4(we, enable, WReg);
+
+	output logic [3:0] we;
+	input logic enable;
+	input logic [1:0]WReg;
+	logic [1:0] out;
+	
+	dec1_2 (out, enable,WReg[0]);
+	dec1_2(we[0:1], out[0], WReg[1]); 	
+	dec1_2(we[2:3], out[1], WReg[1]);
+
+endmodule	

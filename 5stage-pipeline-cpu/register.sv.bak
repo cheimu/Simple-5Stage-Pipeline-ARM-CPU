@@ -1,0 +1,9 @@
+module register (dataIn, dataOut, we, clk);
+	output logic [63:0] dataOut;
+	input logic [63:0] dataIn;
+	input logic we, clk;
+	
+	always_ff (@posedge clk) begin
+		
+	end
+end module 

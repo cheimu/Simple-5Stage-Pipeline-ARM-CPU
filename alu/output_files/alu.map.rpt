@@ -1,0 +1,711 @@
+Analysis & Synthesis report for alu
+Tue Oct 24 10:50:03 2017
+Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "alu_1b:alu0|mux8_1:mux0"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct 24 10:50:03 2017           ;
+; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
+; Revision Name                   ; alu                                             ;
+; Top-level Entity Name           ; alu                                             ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 0                                               ;
+; Total pins                      ; 199                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; alu                ; alu                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------+---------+
+; mux8_1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/mux8_1.sv   ;         ;
+; mux4_1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/mux4_1.sv   ;         ;
+; mux.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/mux.sv      ;         ;
+; adder.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/adder.sv    ;         ;
+; add_sub.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/add_sub.sv  ;         ;
+; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/alu.sv      ;         ;
+; alu_1b.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/alu_1b.sv   ;         ;
+; zeroflag.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/yongqw2/Desktop/Lab2/zeroflag.sv ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 166            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 242            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 89             ;
+;     -- 5 input functions                    ; 25             ;
+;     -- 4 input functions                    ; 14             ;
+;     -- <=3 input functions                  ; 114            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 199            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; cntrl[0]~input ;
+; Maximum fan-out                             ; 138            ;
+; Total fan-out                               ; 1250           ;
+; Average fan-out                             ; 1.95           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
+; |alu                         ; 242 (1)             ; 0 (0)                     ; 0                 ; 0          ; 199  ; 0            ; |alu                                                      ; alu         ; work         ;
+;    |alu_1b:alu0|             ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:alu0                                          ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:alu0|add_sub:fulladder                        ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:alu0|add_sub:fulladder|adder:add0             ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:alu0|mux8_1:mux0                              ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:alu0|mux8_1:mux0|mux2_1:m2                    ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[10].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[10].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[11].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[11].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[12].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[12].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[13].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[13].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[14].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[14].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[14].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[14].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[14].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[14].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[15].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[15].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[16].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[16].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[17].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[17].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[18].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[18].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[19].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[19].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[19].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[19].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[19].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[19].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[1].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[1].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[1].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[1].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[1].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[1].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[20].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[20].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[21].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[21].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[22].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[22].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[23].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[23].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[24].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[24].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[24].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[24].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[24].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[24].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[25].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[25].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[26].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[26].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[27].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[27].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[28].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[28].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[29].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[29].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[29].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[29].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[29].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[29].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[2].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[2].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[30].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[30].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[31].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[31].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[32].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[32].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[33].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[33].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[34].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[34].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[34].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[34].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[34].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[34].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[35].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[35].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[36].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[36].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[37].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[37].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[38].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[38].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[39].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[39].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[39].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[39].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[39].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[39].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[3].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[3].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[40].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[40].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[41].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[41].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[42].alui| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[42].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[42].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[42].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[42].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[42].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[43].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[43].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[44].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[44].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[45].alui| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[45].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[46].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[46].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[47].alui| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[47].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[47].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[47].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[47].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[47].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[48].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[48].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[49].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[49].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[4].alui|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[4].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[4].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[4].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[4].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[4].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[50].alui| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[50].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[51].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[51].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[52].alui| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[52].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[52].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[52].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[52].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[52].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[53].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[53].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[54].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[54].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[55].alui| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[55].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[56].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[56].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[57].alui| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[57].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[57].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[57].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[57].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[57].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[58].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[58].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[59].alui| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[59].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[5].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[5].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[60].alui| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[60].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[61].alui| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[61].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[62].alui| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[62].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[62].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[62].alui|add_sub:fulladder|mux2_1:m0  ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[62].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[62].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[63].alui| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[63].alui                              ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[63].alui|add_sub:fulladder            ; add_sub     ; work         ;
+;          |adder:add0|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[63].alui|add_sub:fulladder|adder:add0 ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[63].alui|mux8_1:mux0                  ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[63].alui|mux8_1:mux0|mux2_1:m2        ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[6].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[6].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[7].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[7].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[8].alui|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;          |mux2_1:m0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui|add_sub:fulladder|mux2_1:m0   ; mux2_1      ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[8].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |alu_1b:eachbit[9].alui|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[9].alui                               ; alu_1b      ; work         ;
+;       |add_sub:fulladder|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[9].alui|add_sub:fulladder             ; add_sub     ; work         ;
+;          |adder:add0|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[9].alui|add_sub:fulladder|adder:add0  ; adder       ; work         ;
+;       |mux8_1:mux0|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[9].alui|mux8_1:mux0                   ; mux8_1      ; work         ;
+;          |mux2_1:m2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1b:eachbit[9].alui|mux8_1:mux0|mux2_1:m2         ; mux2_1      ; work         ;
+;    |zeroflag:zflag|          ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|zeroflag:zflag                                       ; zeroflag    ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 5:1                ; 64 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |alu|alu_1b:alu0|mux8_1:mux0|mux2_1:m2|o1 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "alu_1b:alu0|mux8_1:mux0" ;
++--------+-------+----------+-------------------------+
+; Port   ; Type  ; Severity ; Details                 ;
++--------+-------+----------+-------------------------+
+; inp[7] ; Input ; Info     ; Stuck at GND            ;
+; inp[1] ; Input ; Info     ; Stuck at GND            ;
++--------+-------+----------+-------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 242                         ;
+;     normal            ; 242                         ;
+;         2 data inputs ; 74                          ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 25                          ;
+;         6 data inputs ; 89                          ;
+; boundary_port         ; 199                         ;
+;                       ;                             ;
+; Max LUT depth         ; 27.00                       ;
+; Average LUT depth     ; 18.65                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
+    Info: Processing started: Tue Oct 24 10:49:50 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu -c alu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file mux8_1.sv
+    Info (12023): Found entity 1: mux8_1 File: C:/Users/yongqw2/Desktop/Lab2/mux8_1.sv Line: 3
+    Info (12023): Found entity 2: mux_testbench File: C:/Users/yongqw2/Desktop/Lab2/mux8_1.sv Line: 16
+Info (12021): Found 2 design units, including 2 entities, in source file mux4_1.sv
+    Info (12023): Found entity 1: mux4_1 File: C:/Users/yongqw2/Desktop/Lab2/mux4_1.sv Line: 3
+    Info (12023): Found entity 2: mux4_1_testbench File: C:/Users/yongqw2/Desktop/Lab2/mux4_1.sv Line: 14
+Info (12021): Found 2 design units, including 2 entities, in source file mux.sv
+    Info (12023): Found entity 1: mux2_1 File: C:/Users/yongqw2/Desktop/Lab2/mux.sv Line: 3
+    Info (12023): Found entity 2: mux2_1_testbench File: C:/Users/yongqw2/Desktop/Lab2/mux.sv Line: 18
+Info (12021): Found 2 design units, including 2 entities, in source file adder.sv
+    Info (12023): Found entity 1: adder File: C:/Users/yongqw2/Desktop/Lab2/adder.sv Line: 3
+    Info (12023): Found entity 2: adder_testbench File: C:/Users/yongqw2/Desktop/Lab2/adder.sv Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file add_sub.sv
+    Info (12023): Found entity 1: add_sub File: C:/Users/yongqw2/Desktop/Lab2/add_sub.sv Line: 3
+Info (12021): Found 2 design units, including 2 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/yongqw2/Desktop/Lab2/alu.sv Line: 3
+    Info (12023): Found entity 2: alustim File: C:/Users/yongqw2/Desktop/Lab2/alu.sv Line: 49
+Info (12021): Found 2 design units, including 2 entities, in source file alu_1b.sv
+    Info (12023): Found entity 1: alu_1b File: C:/Users/yongqw2/Desktop/Lab2/alu_1b.sv Line: 3
+    Info (12023): Found entity 2: alu_1b_testbench File: C:/Users/yongqw2/Desktop/Lab2/alu_1b.sv Line: 22
+Info (12021): Found 2 design units, including 2 entities, in source file zeroflag.sv
+    Info (12023): Found entity 1: zeroflag File: C:/Users/yongqw2/Desktop/Lab2/zeroflag.sv Line: 3
+    Info (12023): Found entity 2: zeroflag_testbench File: C:/Users/yongqw2/Desktop/Lab2/zeroflag.sv Line: 43
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12128): Elaborating entity "alu_1b" for hierarchy "alu_1b:alu0" File: C:/Users/yongqw2/Desktop/Lab2/alu.sv Line: 11
+Info (12128): Elaborating entity "add_sub" for hierarchy "alu_1b:alu0|add_sub:fulladder" File: C:/Users/yongqw2/Desktop/Lab2/alu_1b.sv Line: 11
+Info (12128): Elaborating entity "mux2_1" for hierarchy "alu_1b:alu0|add_sub:fulladder|mux2_1:m0" File: C:/Users/yongqw2/Desktop/Lab2/add_sub.sv Line: 10
+Info (12128): Elaborating entity "adder" for hierarchy "alu_1b:alu0|add_sub:fulladder|adder:add0" File: C:/Users/yongqw2/Desktop/Lab2/add_sub.sv Line: 11
+Info (12128): Elaborating entity "mux8_1" for hierarchy "alu_1b:alu0|mux8_1:mux0" File: C:/Users/yongqw2/Desktop/Lab2/alu_1b.sv Line: 18
+Info (12128): Elaborating entity "mux4_1" for hierarchy "alu_1b:alu0|mux8_1:mux0|mux4_1:m0" File: C:/Users/yongqw2/Desktop/Lab2/mux8_1.sv Line: 9
+Info (12128): Elaborating entity "zeroflag" for hierarchy "zeroflag:zflag" File: C:/Users/yongqw2/Desktop/Lab2/alu.sv Line: 27
+Info (13014): Ignored 64 buffer(s)
+    Info (13019): Ignored 64 SOFT buffer(s)
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 441 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 131 input pins
+    Info (21059): Implemented 68 output pins
+    Info (21061): Implemented 242 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 717 megabytes
+    Info: Processing ended: Tue Oct 24 10:50:04 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
+
+

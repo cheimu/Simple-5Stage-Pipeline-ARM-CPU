@@ -1,0 +1,10 @@
+module zeroflag (flag, bits);
+	input logic [63:0] bits;
+	output logic flag;
+	logic [63:0] nbits;
+	logic [15:0] a0o;
+	logic [3:0] a1o;
+	
+	genvar i;
+	generate 
+	for ( i = 0; 

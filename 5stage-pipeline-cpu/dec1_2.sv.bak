@@ -1,0 +1,10 @@
+module dec1_2(we, enable, WReg);
+	output logic [1:0] we;
+	input logic enable, WReg;
+	
+	we[0] = enable & ~WReg;
+	we[1] = enable & WReg;
+	
+endmodule
+
+	

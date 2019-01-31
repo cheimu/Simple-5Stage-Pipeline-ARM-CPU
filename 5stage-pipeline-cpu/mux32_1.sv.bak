@@ -1,0 +1,14 @@
+module mux32_1 (out, inp, sel);
+	output logic [63:0] out;
+	input logic [31:0][63:0] inp;
+	input logic [4:0] sel;
+	logic [3:0] outi;
+	
+	mux8_1 (outi[0], inp[0:7], sel[0:2]);
+	mux8_1 (outi[1], inp[8:15], sel[0:2]);
+	mux8_1 (outi[2], inp[16:23], sel[0:2]);
+	mux8_1 (outi[3], inp[24:31], sel[0:2]);
+	
+	
+	mux4_1 (out, outi, sel[3:4]);
+endmodule

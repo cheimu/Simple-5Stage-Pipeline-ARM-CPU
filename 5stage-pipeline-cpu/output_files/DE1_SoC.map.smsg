@@ -1,0 +1,6 @@
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (10281): Verilog HDL Declaration information at computation.sv(10): object "ZorK" differs only in case from object "zork" in the same scope File: C:/Users/yongqw2/Desktop/Lab4/computation.sv Line: 10
+Warning (10034): Output port "dataOut[3]" at buffer.sv(5) has no driver File: C:/Users/yongqw2/Desktop/Lab4/buffer.sv Line: 5
+Warning (10034): Output port "instruction" at instr_fetch.sv(2) has no driver File: C:/Users/yongqw2/Desktop/Lab4/instr_fetch.sv Line: 2
+Warning (10034): Output port "dataOut[4]" at buffer.sv(63) has no driver File: C:/Users/yongqw2/Desktop/Lab4/buffer.sv Line: 63
+Warning (10034): Output port "dataout" at buffer.sv(78) has no driver File: C:/Users/yongqw2/Desktop/Lab4/buffer.sv Line: 78

@@ -1,0 +1,4 @@
+module movkMake (movk_result, mask2, Dw); 
+	input logic [63:0] mask2, Dw;
+	output logic [63:0] movk_result;
+	

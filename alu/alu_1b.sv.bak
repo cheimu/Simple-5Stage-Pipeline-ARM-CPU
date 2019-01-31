@@ -1,0 +1,17 @@
+module alu_1 (ri, cout, a, b, sel, cin);
+
+	output logic ri, cout;
+	input logic a, b, cin;
+	input [2:0] sel;
+	logic sum
+	logic a0, o0, b0, x0;
+	
+	add_sub fulladder (sum, cout, cin, a,b, sel[0]);
+	and aandb (a0, a, b);
+	or aorb (o0, a, b);
+	buf buffer (b0, b);
+	
+	
+	mux8_1 mux0 (ri, {1'b0, x0, o0, a0, sum, sum, 1'b0, b0}, sel[2,0]);
+	
+endmodule

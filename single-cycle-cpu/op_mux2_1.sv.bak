@@ -1,0 +1,15 @@
+`timescale 1ns/10ps
+
+module op_mux2_1(out, i0, i1, sel);
+	output logic [4:0] out;
+	input  logic [4:0] i0, i1; 
+	input logic sel;
+	logic nsel;
+	logic [4:0] a1o, a2o;
+	not #50 n1 (nsel, sel);
+	
+	
+	and #50 a1 (a1o, nsel, i0);
+	and #50 a2 (a2o, sel, i1);
+	or #50 o1 (out, a1o, a2o);			
+endmodule
